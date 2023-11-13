@@ -156,7 +156,7 @@ const Modal = ({
                       onClick={handleSecondaryAction}
                       outline
                     />  
-                  )}
+                  )} 
                   <Button 
                     disabled={disabled} 
                     label={actionLabel} 
