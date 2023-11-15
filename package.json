@@ -16,7 +16,7 @@
     "@types/react-dom": "18.0.11",
     "axios": "^1.6.1",
     "bcrypt": "^5.1.1",
-    "date-fns": "^2.29.3",
+    "date-fns": "^2.30.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "leaflet": "^1.9.4",
