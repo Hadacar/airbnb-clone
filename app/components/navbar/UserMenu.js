@@ -7,11 +7,13 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import useRentModal from "@/app/hooks/useRentModal";
+import { useRouter } from "next/navigation";
 const UserMenu = ({currentUser}) => {
   const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
   const rentModal = useRentModal()
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter()
 
   const handleClick = () =>{
     setIsOpen((value)=>!value)
@@ -88,10 +90,10 @@ const UserMenu = ({currentUser}) => {
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
-                <MenuItem label="My trips" />
-                <MenuItem label="My favorites" />
-                <MenuItem label="My reservations" />
-                <MenuItem label="My properties" />
+                <MenuItem label="My trips" onClick={()=>router.push("/trips")} />
+                <MenuItem label="My favorites" onClick={()=> router.push("/favorites")} />
+                <MenuItem label="My reservations" onClick={()=>router.push("/reservations")} />
+                <MenuItem label="My properties" onClick={()=>router.push("/properties")} />
                 <MenuItem onClick={rentModal.onOpen} label="Airbnb your home" />
                 <hr />
                 <MenuItem onClick={()=>signOut()} label="Logout" />
